@@ -5,7 +5,7 @@ namespace Trivia;
 
 public class Game
 {
-    private const int SquareCount = 12;
+    
 
     private readonly TextWriter _writer;
 
@@ -60,8 +60,7 @@ public class Game
                 _isGettingOutOfPenaltyBox = true;
 
                 _writer.WriteLine(_currentPlayer.Name + " is getting out of the penalty box");
-                _currentPlayer.Place = _currentPlayer.Place + roll;
-                if (_currentPlayer.Place == SquareCount) _currentPlayer.Place = _currentPlayer.Place - SquareCount;
+                _currentPlayer.MoveSquares(roll);
 
                 _writer.WriteLine(_currentPlayer.Name
                         + "'s new location is "
@@ -77,8 +76,7 @@ public class Game
         }
         else
         {
-            _currentPlayer.Place = _currentPlayer.Place + roll;
-            if (_currentPlayer.Place == SquareCount) _currentPlayer.Place = _currentPlayer.Place - SquareCount;
+            _currentPlayer.MoveSquares(roll);
 
             _writer.WriteLine(_currentPlayer.Name
                     + "'s new location is "

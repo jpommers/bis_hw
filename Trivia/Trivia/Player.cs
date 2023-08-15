@@ -2,6 +2,8 @@
 
 public class Player
 {
+    private const int SquareCount = 12;
+
     public Player(string name)
     {
         Name = name;
@@ -11,7 +13,13 @@ public class Player
     }
 
     public string Name { get; init; }
-    public int Place { get; set; }
+    public int Place { get; private set; }
     public int Purse { get; set; }
     public bool InPenaltyBox { get; set; }
+
+    public void MoveSquares(int roll)
+    {
+        Place = Place + roll;
+        if (Place == SquareCount) Place = Place - SquareCount;
+    }
 }
