@@ -33,13 +33,12 @@ public class Game
         return (HowManyPlayers() >= 2);
     }
 
-    public bool Add(string playerName)
+    public void Add(string playerName)
     {
         _players.Add(new Player(playerName));
 
         _writer.WriteLine(playerName + " was added");
         _writer.WriteLine("They are player number " + _players.Count);
-        return true;
     }
 
     public int HowManyPlayers()
