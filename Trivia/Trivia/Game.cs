@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 
 namespace Trivia;
 
@@ -8,17 +7,17 @@ public class Game
 {
     private readonly TextWriter _writer;
 
-    private readonly List<string> _players = new List<string>();
+    private readonly List<string> _players = new();
 
     private readonly int[] _places = new int[6];
     private readonly int[] _purses = new int[6];
 
     private readonly bool[] _inPenaltyBox = new bool[6];
 
-    private readonly LinkedList<string> _popQuestions = new LinkedList<string>();
-    private readonly LinkedList<string> _scienceQuestions = new LinkedList<string>();
-    private readonly LinkedList<string> _sportsQuestions = new LinkedList<string>();
-    private readonly LinkedList<string> _rockQuestions = new LinkedList<string>();
+    private readonly LinkedList<string> _popQuestions = new();
+    private readonly LinkedList<string> _scienceQuestions = new();
+    private readonly LinkedList<string> _sportsQuestions = new();
+    private readonly LinkedList<string> _rockQuestions = new();
 
     private int _currentPlayer;
     private bool _isGettingOutOfPenaltyBox;
@@ -36,7 +35,7 @@ public class Game
         }
     }
 
-    public string CreateRockQuestion(int index)
+    public static string CreateRockQuestion(int index)
     {
         return "Rock Question " + index;
     }
@@ -107,22 +106,22 @@ public class Game
     {
         if (CurrentCategory() == "Pop")
         {
-            _writer.WriteLine(_popQuestions.First());
+            _writer.WriteLine(_popQuestions.First.Value);
             _popQuestions.RemoveFirst();
         }
         if (CurrentCategory() == "Science")
         {
-            _writer.WriteLine(_scienceQuestions.First());
+            _writer.WriteLine(_scienceQuestions.First.Value);
             _scienceQuestions.RemoveFirst();
         }
         if (CurrentCategory() == "Sports")
         {
-            _writer.WriteLine(_sportsQuestions.First());
+            _writer.WriteLine(_sportsQuestions.First.Value);
             _sportsQuestions.RemoveFirst();
         }
         if (CurrentCategory() == "Rock")
         {
-            _writer.WriteLine(_rockQuestions.First());
+            _writer.WriteLine(_rockQuestions.First.Value);
             _rockQuestions.RemoveFirst();
         }
     }
