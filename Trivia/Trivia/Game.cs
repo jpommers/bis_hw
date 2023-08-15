@@ -57,9 +57,11 @@ public class Game
 
         if (_currentPlayer.InPenaltyBox)
         {
+            //assuming you have to roll odd to get out of penalty box
             if (roll % 2 != 0)
             {
                 _isGettingOutOfPenaltyBox = true;
+                _currentPlayer.InPenaltyBox = false;
 
                 _writer.WriteLine(_currentPlayer.Name + " is getting out of the penalty box");
                 _currentPlayer.MoveSquares(roll);
