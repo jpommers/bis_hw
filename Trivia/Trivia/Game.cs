@@ -6,6 +6,8 @@ namespace Trivia;
 
 public class Game
 {
+    private const int SquareCount = 12;
+
     private readonly TextWriter _writer;
 
     private readonly List<Player> _players = new();
@@ -66,7 +68,7 @@ public class Game
 
                 _writer.WriteLine(_currentPlayer.Name + " is getting out of the penalty box");
                 _currentPlayer.Place = _currentPlayer.Place + roll;
-                if (_currentPlayer.Place > 11) _currentPlayer.Place = _currentPlayer.Place - 12;
+                if (_currentPlayer.Place == SquareCount) _currentPlayer.Place = _currentPlayer.Place - SquareCount;
 
                 _writer.WriteLine(_currentPlayer.Name
                         + "'s new location is "
@@ -83,7 +85,7 @@ public class Game
         else
         {
             _currentPlayer.Place = _currentPlayer.Place + roll;
-            if (_currentPlayer.Place > 11) _currentPlayer.Place = _currentPlayer.Place - 12;
+            if (_currentPlayer.Place == SquareCount) _currentPlayer.Place = _currentPlayer.Place - SquareCount;
 
             _writer.WriteLine(_currentPlayer.Name
                     + "'s new location is "
@@ -122,12 +124,15 @@ public class Game
         if (_currentPlayer.Place == 0) return "Pop";
         if (_currentPlayer.Place == 4) return "Pop";
         if (_currentPlayer.Place == 8) return "Pop";
+
         if (_currentPlayer.Place == 1) return "Science";
         if (_currentPlayer.Place == 5) return "Science";
         if (_currentPlayer.Place == 9) return "Science";
+
         if (_currentPlayer.Place == 2) return "Sports";
         if (_currentPlayer.Place == 6) return "Sports";
         if (_currentPlayer.Place == 10) return "Sports";
+
         return "Rock";
     }
 
