@@ -13,7 +13,7 @@ public class Game
 
     private readonly List<QuestionCategory> _questionCategories = new();
 
-    private int _currentPlayerIndex;
+    private int _currentPlayerIndex = -1;
     private Player _currentPlayer;
     private bool _isGettingOutOfPenaltyBox;
 
@@ -48,6 +48,8 @@ public class Game
 
     public void Roll(int roll)
     {
+        _currentPlayerIndex++;
+        if (_currentPlayerIndex == _players.Count) _currentPlayerIndex = 0;
         _currentPlayer = _players[_currentPlayerIndex];
 
         _writer.WriteLine(_currentPlayer.Name + " is the current player");
@@ -110,15 +112,11 @@ public class Game
                         + " Gold Coins.");
 
                 var winner = DidPlayerWin();
-                _currentPlayerIndex++;
-                if (_currentPlayerIndex == _players.Count) _currentPlayerIndex = 0;
 
                 return !winner;
             }
             else
             {
-                _currentPlayerIndex++;
-                if (_currentPlayerIndex == _players.Count) _currentPlayerIndex = 0;
                 return true;
             }
         }
@@ -132,8 +130,6 @@ public class Game
                     + " Gold Coins.");
 
             var winner = DidPlayerWin();
-            _currentPlayerIndex++;
-            if (_currentPlayerIndex == _players.Count) _currentPlayerIndex = 0;
 
             return !winner;
         }
@@ -145,8 +141,6 @@ public class Game
         _writer.WriteLine(_currentPlayer.Name + " was sent to the penalty box");
         _currentPlayer.InPenaltyBox = true;
 
-        _currentPlayerIndex++;
-        if (_currentPlayerIndex == _players.Count) _currentPlayerIndex = 0;
         return true;
     }
 
