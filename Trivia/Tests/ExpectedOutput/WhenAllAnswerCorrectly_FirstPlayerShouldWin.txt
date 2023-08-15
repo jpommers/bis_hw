@@ -1,0 +1,81 @@
+﻿Janis was added
+They are player number 1
+Peter was added
+They are player number 2
+Janis is the current player
+They have rolled a 1
+Janis's new location is 1
+The category is Science
+Science Question 0
+Answer was corrent!!!!
+Janis now has 1 Gold Coins.
+Peter is the current player
+They have rolled a 1
+Peter's new location is 1
+The category is Science
+Science Question 1
+Answer was corrent!!!!
+Peter now has 1 Gold Coins.
+Janis is the current player
+They have rolled a 1
+Janis's new location is 2
+The category is Sports
+Sports Question 0
+Answer was corrent!!!!
+Janis now has 2 Gold Coins.
+Peter is the current player
+They have rolled a 1
+Peter's new location is 2
+The category is Sports
+Sports Question 1
+Answer was corrent!!!!
+Peter now has 2 Gold Coins.
+Janis is the current player
+They have rolled a 1
+Janis's new location is 3
+The category is Rock
+Rock Question 0
+Answer was corrent!!!!
+Janis now has 3 Gold Coins.
+Peter is the current player
+They have rolled a 1
+Peter's new location is 3
+The category is Rock
+Rock Question 1
+Answer was corrent!!!!
+Peter now has 3 Gold Coins.
+Janis is the current player
+They have rolled a 1
+Janis's new location is 4
+The category is Pop
+Pop Question 0
+Answer was corrent!!!!
+Janis now has 4 Gold Coins.
+Peter is the current player
+They have rolled a 1
+Peter's new location is 4
+The category is Pop
+Pop Question 1
+Answer was corrent!!!!
+Peter now has 4 Gold Coins.
+Janis is the current player
+They have rolled a 1
+Janis's new location is 5
+The category is Science
+Science Question 2
+Answer was corrent!!!!
+Janis now has 5 Gold Coins.
+Peter is the current player
+They have rolled a 1
+Peter's new location is 5
+The category is Science
+Science Question 3
+Answer was corrent!!!!
+Peter now has 5 Gold Coins.
+Janis is the current player
+They have rolled a 1
+Janis's new location is 6
+The category is Sports
+Sports Question 2
+Answer was corrent!!!!
+Janis now has 6 Gold Coins.
