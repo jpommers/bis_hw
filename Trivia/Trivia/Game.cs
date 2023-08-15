@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.IO;
 
 namespace Trivia;
@@ -31,13 +32,8 @@ public class Game
             _popQuestions.AddLast("Pop Question " + i);
             _scienceQuestions.AddLast(("Science Question " + i));
             _sportsQuestions.AddLast(("Sports Question " + i));
-            _rockQuestions.AddLast(CreateRockQuestion(i));
+            _rockQuestions.AddLast("Rock Question " + i);
         }
-    }
-
-    public static string CreateRockQuestion(int index)
-    {
-        return "Rock Question " + index;
     }
 
     public bool IsPlayable()
