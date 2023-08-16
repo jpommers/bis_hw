@@ -26,14 +26,14 @@ public class GameTests
         var expectedOutput = File.ReadAllText($"ExpectedOutput/{nameof(WhenAllAnswerCorrectly_FirstPlayerShouldWin)}.txt");
 
         //ACT
-        bool _notAWinner;
+        bool _shouldGameContinue;
         do
         {
             _game.Roll(1);
 
-            _notAWinner = _game.WasCorrectlyAnswered();
+            _shouldGameContinue = _game.WasCorrectlyAnswered();
 
-        } while (_notAWinner);
+        } while (_shouldGameContinue);
 
         //ASSERT
         _stringWriter.ToString().Should().Be(expectedOutput);
