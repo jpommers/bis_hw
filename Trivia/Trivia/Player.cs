@@ -33,4 +33,9 @@ public class Player
         Place += roll;
         if (Place >= SquareCount) Place -= SquareCount;
     }
+
+    public override string ToString()
+    {
+        return Name;
+    }
 }

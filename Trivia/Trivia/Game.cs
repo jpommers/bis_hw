@@ -81,7 +81,7 @@ public class Game
         if (_currentPlayerIndex == _players.Count) _currentPlayerIndex = 0;
         _currentPlayer = _players[_currentPlayerIndex];
 
-        _writer.WriteLine($"{_currentPlayer.Name} is the current player");
+        _writer.WriteLine($"{_currentPlayer} is the current player");
         _writer.WriteLine($"They have rolled a {roll}");
 
         //release the player from penalty box if needed
@@ -92,11 +92,11 @@ public class Game
             {
                 _currentPlayer.InPenaltyBox = false;
 
-                _writer.WriteLine($"{_currentPlayer.Name} is getting out of the penalty box");
+                _writer.WriteLine($"{_currentPlayer} is getting out of the penalty box");
             }
             else
             {
-                _writer.WriteLine($"{_currentPlayer.Name} is not getting out of the penalty box");
+                _writer.WriteLine($"{_currentPlayer} is not getting out of the penalty box");
             }
         }
 
@@ -104,7 +104,7 @@ public class Game
         {
             _currentPlayer.MoveSquares(roll);
 
-            _writer.WriteLine($"{_currentPlayer.Name}'s new location is {_currentPlayer.Place}");
+            _writer.WriteLine($"{_currentPlayer}'s new location is {_currentPlayer.Place}");
             _writer.WriteLine($"The category is {CurrentCategory()}");
             AskQuestion();
         }
@@ -143,7 +143,7 @@ public class Game
         {
             _writer.WriteLine("Answer was corrent!!!!");
             _currentPlayer.Purse++;
-            _writer.WriteLine($"{_currentPlayer.Name} now has {_currentPlayer.Purse} Gold Coins.");
+            _writer.WriteLine($"{_currentPlayer} now has {_currentPlayer.Purse} Gold Coins.");
 
             return !DidPlayerWin();
         }
@@ -156,7 +156,7 @@ public class Game
     public bool WrongAnswer()
     {
         _writer.WriteLine("Question was incorrectly answered");
-        _writer.WriteLine($"{_currentPlayer.Name} was sent to the penalty box");
+        _writer.WriteLine($"{_currentPlayer} was sent to the penalty box");
         _currentPlayer.InPenaltyBox = true;
 
         return true;
