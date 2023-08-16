@@ -1,7 +1,5 @@
 ﻿using FluentAssertions;
-using System;
 using System.IO;
-using System.Xml.Linq;
 using Trivia;
 using Xunit;
 
