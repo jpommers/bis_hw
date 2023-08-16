@@ -22,7 +22,7 @@ public class GameRunner
         {
             game.Roll(rand.Next(5) + 1);
 
-            if (rand.Next(9) == 7)
+            if (rand.Next(9) == 0)
             {
                 _shouldGameContinue = game.WrongAnswer();
             }
