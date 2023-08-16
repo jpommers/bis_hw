@@ -6,6 +6,8 @@ public class GameRunner
 {
     private static bool _shouldGameContinue;
 
+    protected GameRunner() { }
+
     public static void Main()
     {
         var game = new Game(Console.Out);
