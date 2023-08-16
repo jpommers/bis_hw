@@ -150,9 +150,7 @@ public class Game
                     + _currentPlayer.Purse
                     + " Gold Coins.");
 
-            var winner = DidPlayerWin();
-
-            return !winner;
+            return !DidPlayerWin();
         }
     }
 
