@@ -135,18 +135,13 @@ public class Game
     /// <returns>Should the game continue</returns>
     public bool WasCorrectlyAnswered()
     {
-        if (_currentPlayer.InPenaltyBox)
-        {
-            return true;
-        }
-        else
-        {
-            _writer.WriteLine("Answer was corrent!!!!");
-            _currentPlayer.Purse++;
-            _writer.WriteLine($"{_currentPlayer} now has {_currentPlayer.Purse} Gold Coins.");
+        if (_currentPlayer.InPenaltyBox) return true;
 
-            return !DidPlayerWin();
-        }
+        _writer.WriteLine("Answer was corrent!!!!");
+        _currentPlayer.Purse++;
+        _writer.WriteLine($"{_currentPlayer} now has {_currentPlayer.Purse} Gold Coins.");
+
+        return !DidPlayerWin();
     }
 
     /// <summary>
