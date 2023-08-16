@@ -2,10 +2,17 @@
 
 namespace Trivia;
 
+/// <summary>
+/// Class representing a question category
+/// </summary>
 public class QuestionCategory
 {
     private LinkedList<string> Questions { get; init; } = new LinkedList<string>();
 
+    /// <summary>
+    /// Creates a new question category instance
+    /// </summary>
+    /// <param name="name">Category name</param>
     public QuestionCategory(string name)
     {
         Name = name;
@@ -18,6 +25,10 @@ public class QuestionCategory
 
     public string Name { get; init; }
 
+    /// <summary>
+    /// Returns next question
+    /// </summary>
+    /// <returns>Next question</returns>
     public string PopQuestion()
     {
         var question = Questions.First.Value;

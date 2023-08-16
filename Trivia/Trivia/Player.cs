@@ -1,9 +1,16 @@
 ﻿namespace Trivia;
 
+/// <summary>
+/// Class representing a player
+/// </summary>
 public class Player
 {
     private const int SquareCount = 12;
 
+    /// <summary>
+    /// creates a new player
+    /// </summary>
+    /// <param name="name">The players name</param>
     public Player(string name)
     {
         Name = name;
@@ -17,9 +24,13 @@ public class Player
     public int Purse { get; set; }
     public bool InPenaltyBox { get; set; }
 
+    /// <summary>
+    /// Moves player on the board
+    /// </summary>
+    /// <param name="roll">How many squares to move</param>
     public void MoveSquares(int roll)
     {
-        Place = Place + roll;
-        if (Place >= SquareCount) Place = Place - SquareCount;
+        Place += roll;
+        if (Place >= SquareCount) Place -= SquareCount;
     }
 }
