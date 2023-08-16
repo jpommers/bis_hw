@@ -3,10 +3,19 @@ using System.IO;
 
 namespace Trivia;
 
+/// <summary>
+/// Game rules:
+/// * Each player rolls a dice and ends up on a square.
+/// * Each square has its own Trivia category
+/// * Answering question correctly gives you a point
+/// * Answering wrongly sends you to penalty box
+/// * You get out of penalty box by rolling an odd number
+/// * If you roll even while in jail you skip turn
+/// * You can answer after getting out of penalty box
+/// * First player to get to 6 points wins
+/// </summary>
 public class Game
 {
-    
-
     private readonly TextWriter _writer;
 
     private readonly List<Player> _players = new();
