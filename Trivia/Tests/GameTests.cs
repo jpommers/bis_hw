@@ -108,4 +108,28 @@ public class GameTests
         //ASSERT
         _stringWriter.ToString().Should().Be(expectedOutput);
     }
+
+    [Fact]
+    public void WhenPlayerInPenaltyBox_ShouldNotBeAbleToGetPoints()
+    {
+        //ARRANGE
+        var expectedOutput = File.ReadAllText($"ExpectedOutput/{nameof(WhenPlayerInPenaltyBox_ShouldNotBeAbleToGetPoints)}.txt");
+
+        //ACT
+
+        //player 1 answer wrongly
+        _game.Roll(1);
+        _game.WrongAnswer();
+
+        //player 2 answers right
+        _game.Roll(1);
+        _game.WasCorrectlyAnswered();
+
+        //player 1 rolls 2 (does not get out of jail)
+        _game.Roll(2);
+        _game.WasCorrectlyAnswered();
+
+        //ASSERT
+        _stringWriter.ToString().Should().Be(expectedOutput);
+    }
 }

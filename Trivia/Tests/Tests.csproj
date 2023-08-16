@@ -32,6 +32,9 @@
     <None Update="ExpectedOutput\WhenPlayerGoesOverSquareCount_LocationShouldLoop.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Update="ExpectedOutput\WhenPlayerInPenaltyBox_ShouldNotBeAbleToGetPoints.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Update="ExpectedOutput\WhenPlayerRollsOdd_ShouldGetOutOfPenaltyBox.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>

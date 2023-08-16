@@ -24,7 +24,6 @@ public class Game
 
     private int _currentPlayerIndex = -1;
     private Player _currentPlayer;
-    private bool _isGettingOutOfPenaltyBox;
 
     public Game(TextWriter writer)
     {
@@ -69,7 +68,6 @@ public class Game
             //assuming you have to roll odd to get out of penalty box
             if (roll % 2 != 0)
             {
-                _isGettingOutOfPenaltyBox = true;
                 _currentPlayer.InPenaltyBox = false;
 
                 _writer.WriteLine(_currentPlayer.Name + " is getting out of the penalty box");
@@ -84,7 +82,6 @@ public class Game
             else
             {
                 _writer.WriteLine(_currentPlayer.Name + " is not getting out of the penalty box");
-                _isGettingOutOfPenaltyBox = false;
             }
         }
         else
@@ -113,23 +110,7 @@ public class Game
     {
         if (_currentPlayer.InPenaltyBox)
         {
-            if (_isGettingOutOfPenaltyBox)
-            {
-                _writer.WriteLine("Answer was correct!!!!");
-                _currentPlayer.Purse++;
-                _writer.WriteLine(_currentPlayer.Name
-                        + " now has "
-                        + _currentPlayer.Purse
-                        + " Gold Coins.");
-
-                var winner = DidPlayerWin();
-
-                return !winner;
-            }
-            else
-            {
-                return true;
-            }
+            return true;
         }
         else
         {
