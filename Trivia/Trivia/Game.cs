@@ -159,9 +159,9 @@ public class Game
 
 
     /// <summary>
-    /// Tells if any player has won
+    /// Tells if current player has won
     /// </summary>
-    /// <returns>If any player has won</returns>
+    /// <returns>If current player has won</returns>
     private bool DidPlayerWin()
     {
         return _currentPlayer.Purse >= 6;
