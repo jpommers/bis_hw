@@ -63,6 +63,7 @@ public class Game
         _writer.WriteLine(_currentPlayer.Name + " is the current player");
         _writer.WriteLine("They have rolled a " + roll);
 
+        //release the player from penalty box if needed
         if (_currentPlayer.InPenaltyBox)
         {
             //assuming you have to roll odd to get out of penalty box
@@ -71,20 +72,14 @@ public class Game
                 _currentPlayer.InPenaltyBox = false;
 
                 _writer.WriteLine(_currentPlayer.Name + " is getting out of the penalty box");
-                _currentPlayer.MoveSquares(roll);
-
-                _writer.WriteLine(_currentPlayer.Name
-                        + "'s new location is "
-                        + _currentPlayer.Place);
-                _writer.WriteLine("The category is " + CurrentCategory());
-                AskQuestion();
             }
             else
             {
                 _writer.WriteLine(_currentPlayer.Name + " is not getting out of the penalty box");
             }
         }
-        else
+
+        if(!_currentPlayer.InPenaltyBox)
         {
             _currentPlayer.MoveSquares(roll);
 
