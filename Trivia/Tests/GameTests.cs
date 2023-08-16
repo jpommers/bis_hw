@@ -72,4 +72,40 @@ public class GameTests
         //ASSERT
         _stringWriter.ToString().Should().Be(expectedOutput);
     }
+
+    [Fact]
+    public void WhenPlayerGoesOverSquareCount_LocationShouldLoop()
+    {
+        //ARRANGE
+        var expectedOutput = File.ReadAllText($"ExpectedOutput/{nameof(WhenPlayerGoesOverSquareCount_LocationShouldLoop)}.txt");
+
+        //ACT
+
+        //player 1 rolls 6
+        _game.Roll(6);
+        _game.WasCorrectlyAnswered();
+
+        //player 2 rolls 6
+        _game.Roll(2);
+        _game.WasCorrectlyAnswered();
+
+        //player 1 rolls 6
+        _game.Roll(6);
+        _game.WasCorrectlyAnswered();
+
+        //player 2 rolls 6
+        _game.Roll(2);
+        _game.WasCorrectlyAnswered();
+
+        //player 1 rolls 6
+        _game.Roll(6);
+        _game.WasCorrectlyAnswered();
+
+        //player 2 rolls 6
+        _game.Roll(2);
+        _game.WasCorrectlyAnswered();
+
+        //ASSERT
+        _stringWriter.ToString().Should().Be(expectedOutput);
+    }
 }

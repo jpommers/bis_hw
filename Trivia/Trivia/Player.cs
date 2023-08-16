@@ -20,6 +20,6 @@ public class Player
     public void MoveSquares(int roll)
     {
         Place = Place + roll;
-        if (Place == SquareCount) Place = Place - SquareCount;
+        if (Place >= SquareCount) Place = Place - SquareCount;
     }
 }
